@@ -9,6 +9,9 @@ import Cards from './dbCards.js';
 const app = express();
 const port = process.env.PORT || 8001;
 const connection_url = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.hpqxgdo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+console.log(
+  `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.hpqxgdo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+);
 
 // Middleware
 app.use(express.json());
