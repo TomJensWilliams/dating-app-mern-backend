@@ -29,7 +29,9 @@ mongoose.connect(connection_url, {
 });
 
 // API Endpoints
-app.get('/', (req, res) => {res.status(200).send('Hello TheWebDev'));
+app.get('/', (req, res) => {
+  res.status(200).send('Hello TheWebDev');
+});
 
 app.post('/dating/cards', async (req, res) => {
   try {
