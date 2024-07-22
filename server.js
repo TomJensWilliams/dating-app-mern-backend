@@ -3,8 +3,7 @@ import mongoose from 'mongoose';
 import Cors from 'cors';
 // import dotenv from 'dotenv';
 import Cards from './dbCards.js';
-
-dotenv.config();
+// dotenv.config();
 
 // App config
 const app = express();
@@ -30,7 +29,7 @@ mongoose.connect(connection_url, {
 });
 
 // API Endpoints
-app.get('/', (req, res) => res.status(200).send('Hello TheWebDev'));
+app.get('/', (req, res) => {res.status(200).send('Hello TheWebDev'}));
 
 app.post('/dating/cards', async (req, res) => {
   try {
