@@ -1,9 +1,15 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import Cors from 'cors';
-// import dotenv from 'dotenv';
 import Cards from './dbCards.js';
-// dotenv.config();
+import dotenv from 'dotenv';
+
+if (process.env.HEROKU_ENV) {
+  console.log('Using Heroku Environment');
+} else {
+  console.log('Using Node Environment');
+  dotenv.config();
+}
 
 // App config
 const app = express();
