@@ -15,9 +15,6 @@ if (process.env.HEROKU_ENV) {
 const app = express();
 const port = process.env.PORT || 8001;
 const connection_url = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.hpqxgdo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-console.log(
-  `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.hpqxgdo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
-);
 
 // Middleware
 app.use(express.json());
@@ -25,12 +22,7 @@ app.use(Cors());
 
 // DB Config
 mongoose.connect(connection_url, {
-  /*header
-  Liberty Roth
-  Joshua Cardenas
-  Tobias Farley
-  Gilbert Spencer
-  
+  /*
   useNewUrlParser: true,
   useCreatedIndex: true,
   useUnifiedTypology: true,
@@ -49,6 +41,7 @@ app.post('/dating/cards', async (req, res) => {
     res.status(201).send(data);
   } catch (err) {
     res.status(500).send(err);
+    console.error(err);
   }
 });
 
@@ -58,6 +51,7 @@ app.get('/dating/cards', async (req, res) => {
     res.status(200).send(data);
   } catch (err) {
     res.status(500).send(err);
+    console.error(err);
   }
 });
 
